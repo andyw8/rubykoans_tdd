@@ -26,3 +26,13 @@
 # More scoring examples are given in the tests below:
 #
 # Your goal is to write the score method.
+
+def score(dice)
+  0
+end
+
+describe "#score" do
+	it "is 0 for an empty list" do
+    score([]).should == 0
+  end
+end
