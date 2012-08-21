@@ -28,8 +28,10 @@
 # Your goal is to write the score method.
 
 def score(dice)
-  if dice[0] == 1
+  if dice[0] == 1 && dice[1] == 1 && dice[2] == 1
     1000
+  elsif dice[0] == 1 && dice[1] == 1
+    200
   else
     0
   end
@@ -42,5 +44,9 @@ describe "#score" do
 
   it "is 1000 for three ones" do
     score([1,1,1]).should == 1000
+  end
+
+  it "is 200 for two ones" do
+    score([1,1]).should == 200
   end
 end
