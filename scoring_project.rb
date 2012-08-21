@@ -28,11 +28,10 @@
 # Your goal is to write the score method.
 
 def score(dice)
-  if dice == [2, 2, 2]
-    200
-  elsif dice == [6, 6, 6]
-    600
-  elsif dice[0] == 1 && dice[1] == 1 && dice[2] == 1
+  2.upto(6) do |n|
+    return n * 100 if dice == [n, n, n]
+  end
+  if dice[0] == 1 && dice[1] == 1 && dice[2] == 1
     1000
   elsif dice.count {|n| n == 1} == 2
     200
