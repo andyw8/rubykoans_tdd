@@ -30,6 +30,8 @@
 def score(dice)
   if dice == [2, 2, 2]
     200
+  elsif dice == [6, 6, 6]
+    600
   elsif dice[0] == 1 && dice[1] == 1 && dice[2] == 1
     1000
   elsif dice.count {|n| n == 1} == 2
@@ -50,6 +52,10 @@ describe "#score" do
 
   it "is 200 for [2,2,2]" do
     score([2,2,2]).should == 200
+  end
+
+  it "is 600 for [6,6,6]" do
+    score([6,6,6]).should == 600
   end
 
   it "is 200 for [1,1]" do
