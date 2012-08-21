@@ -28,11 +28,19 @@
 # Your goal is to write the score method.
 
 def score(dice)
-  0
+  if dice[0] == 1
+    1000
+  else
+    0
+  end
 end
 
 describe "#score" do
 	it "is 0 for an empty list" do
     score([]).should == 0
+  end
+
+  it "is 1000 for three ones" do
+    score([1,1,1]).should == 1000
   end
 end
