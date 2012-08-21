@@ -30,7 +30,7 @@
 def score(dice)
   if dice[0] == 1 && dice[1] == 1 && dice[2] == 1
     1000
-  elsif dice[0] == 1 && dice[1] == 1
+  elsif (dice[0] == 1 && dice[1] == 1) || (dice[1] == 1 && dice[2] == 1)
     200
   else
     0
@@ -48,5 +48,9 @@ describe "#score" do
 
   it "is 200 for [1,1]" do
     score([1,1]).should == 200
+  end
+
+  it "is 200 for [0,1,1]" do
+    score([0,1,1]).should == 200
   end
 end
