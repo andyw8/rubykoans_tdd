@@ -28,7 +28,9 @@
 # Your goal is to write the score method.
 
 def score(dice)
-  if dice[0] == 1 && dice[1] == 1 && dice[2] == 1
+  if dice == [2, 2, 2]
+    200
+  elsif dice[0] == 1 && dice[1] == 1 && dice[2] == 1
     1000
   elsif dice.count {|n| n == 1} == 2
     200
@@ -44,6 +46,10 @@ describe "#score" do
 
   it "is 1000 for [1,1,1]" do
     score([1,1,1]).should == 1000
+  end
+
+  it "is 200 for [2,2,2]" do
+    score([2,2,2]).should == 200
   end
 
   it "is 200 for [1,1]" do
