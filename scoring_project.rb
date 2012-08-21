@@ -30,7 +30,7 @@
 def score(dice)
   if dice[0] == 1 && dice[1] == 1 && dice[2] == 1
     1000
-  elsif (dice[0] == 1 && dice[1] == 1) || (dice[1] == 1 && dice[2] == 1)
+  elsif dice.count {|n| n == 1} == 2
     200
   else
     0
